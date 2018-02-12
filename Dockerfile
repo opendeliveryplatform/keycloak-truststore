@@ -13,7 +13,8 @@ ENV HOSTNAME_VERIFICATION_POLICY WILDCARD
 
 # Execute customization script
 RUN cd /opt/jboss/keycloak && \
-    /opt/jboss/keycloak/customization/execute.sh
+    /opt/jboss/keycloak/customization/execute.sh && \
+    chown -R jboss: /opt/jboss
 
 USER jboss
 
