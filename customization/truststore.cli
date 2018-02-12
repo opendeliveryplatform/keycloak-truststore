@@ -1,0 +1,4 @@
+/subsystem=keycloak-server/spi=truststore/:add
+/subsystem=keycloak-server/spi=truststore/provider=file/:add(enabled=false)
+/subsystem=keycloak-server/spi=truststore/provider=file/:write-attribute(name=properties, value={file => "${env.TRUSTSTORE}", password => "${env.TRUSTSTORE_PASSWORD}", hostname-verification-policy => "${env.HOSTNAME_VERIFICATION_POLICY}", disabled => "${env.TRUSTSTORE_DISABLED}"})
+/subsystem=keycloak-server/spi=truststore/provider=file/:write-attribute(name=enabled, value=true)
