@@ -17,4 +17,5 @@ RUN cd /opt/jboss/keycloak && \
     chown -R jboss: /opt/jboss
 
 USER jboss
+CMD ["-b", "0.0.0.0", "-Dkeycloak.import=/opt/jboss/keycloak/${KEYCLOAK_IMPORT_REALM}"]
 
